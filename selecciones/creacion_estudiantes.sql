@@ -36,5 +36,26 @@ values('1721870016', 'Julian', 'Alvarez', 'julian@gmail.com', '02/07/1999')
 insert into estudiantes(cedula, nombre, apellido, email, fecha_nacimiento)
 values('1721870017', 'Harry', 'Kane', 'harry@gmail.com', '12/01/2000')
 
+insert into estudiantes(cedula, nombre, apellido, email, fecha_nacimiento)
+values('1821870017', 'Harry', 'Potter', 'harrp@gmail.com', '12/05/2002')
+
+insert into estudiantes(cedula, nombre, apellido, email, fecha_nacimiento)
+values('1921870017', 'Dominik', 'Mysterio', 'mysterio@gmail.com', '15/06/2000')
+
+insert into estudiantes(cedula, nombre, apellido, email, fecha_nacimiento)
+values('1921870789', 'Aria', 'Stark', 'aria@gmail.com', '21/06/2005')
+
+insert into estudiantes(cedula, nombre, apellido, email, fecha_nacimiento)
+values('1921870456', 'Ariana', 'Grande', 'arig@gmail.com', '15/07/1999')
+
 --Consulta
 select * from estudiantes
+
+--Consultas el Nombre y Cedula de todos los Estudiantes
+select nombre, cedula from estudiantes
+
+--Consultar el Nombre de todos los estudiantes cuya cedula inicie con 17
+select nombre from estudiantes where cedula like '17%'
+
+--Consultar el Nombre Completo de los estudiantes cuyo nombre empiece con A
+select nombre, apellido from estudiantes where nombre like 'A%'

@@ -43,3 +43,12 @@ values(109, '1721870010', '10/02/2025', '17:30')
 
 --Consulta
 select * from registros_entrada
+
+--Consultar todas las Cedulas de empleado, Fecha y Hora de los Registros
+select cedula_empleado, fecha, hora from registros_entrada 
+
+--Consultar los registros que esten entre 07:00 y 14:00
+select * from registros_entrada where hora between '07:00' and '14:00'
+
+--Consultar los registros que tengas horas superiores a 08:00
+select * from registros_entrada where hora > '08:00'

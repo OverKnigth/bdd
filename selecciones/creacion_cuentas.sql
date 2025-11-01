@@ -41,5 +41,26 @@ values('17842', '17836', '04/05/2004', 204)
 insert into cuentas(numero_cuenta, cedula_propietario, fecha_creacion, saldo)
 values('17882', '17864', '14/07/2005', 140)
 
+insert into cuentas(numero_cuenta, cedula_propietario, fecha_creacion, saldo)
+values('17864', '17868', '14/09/2025', 8000)
+
+insert into cuentas(numero_cuenta, cedula_propietario, fecha_creacion, saldo)
+values('17111', '17123', '01/10/2005', 15)
+
+insert into cuentas(numero_cuenta, cedula_propietario, fecha_creacion, saldo)
+values('17333', '17321', '25/08/2025', 10)
+
+insert into cuentas(numero_cuenta, cedula_propietario, fecha_creacion, saldo)
+values('17222', '17122', '01/10/2025', 150)
+
 --Consulta
 select * from cuentas
+
+--Consultar los Numero de Cuenta y Saldos de todas las cuentas
+select numero_cuenta, saldo from cuentas
+
+--Consultar los Registros entre el dia de hoy hasta dos meses antes
+select * from cuentas where fecha_creacion between '01/09/2025' and '01/11/2025'
+
+--Consultar el Numero de Cuneta y Saldo de las cuentas hasta dia de hoy hasta dos meses antes
+select numero_cuenta, saldo from cuentas where fecha_creacion between '01/09/2025' and '01/11/2025'

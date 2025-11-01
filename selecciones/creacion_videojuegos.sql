@@ -35,5 +35,26 @@ values(106, 'Fifa', 9)
 insert into videojuegos(codigo, nombre, valoracion)
 values(107, 'Mortal Kombat', 10)
 
+insert into videojuegos(codigo, nombre, valoracion)
+values(108, 'COD', 10)
+
+insert into videojuegos(codigo, nombre, valoracion)
+values(109, 'Crash Bandicoot', 9)
+
+insert into videojuegos(codigo, nombre, valoracion)
+values(110, 'Plantas vs Zombies', 7)
+
+insert into videojuegos(codigo, nombre, valoracion)
+values(111, 'Free Fire', 8)
+
 --Consulta
 select * from videojuegos
+
+--Consultar todos los videojuegos que inicien con la letra C
+select * from videojuegos where nombre like 'C%'
+
+--Consultar todos los videojuegos cuya valoracion este entre 9 y 10
+select * from videojuegos where valoracion between '9' and '10'
+
+--Consultar todos los videojuegos con descripcion NULL
+select * from videojuegos where descripcion is null
