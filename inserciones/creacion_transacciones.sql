@@ -32,16 +32,16 @@ insert into transacciones(codigo, numero_cuenta, monto, tipo, fecha, hora)
 values(105, '12310', 85, 'C', '20/05/2025', '09:48')
 
 insert into transacciones(codigo, numero_cuenta, monto, tipo, fecha, hora)
-values(106, '12311', 260, 'C', '20/05/2025', '09:21')
+values(106, '12311', 260, 'C', '20/05/2025', '09:7')
 
 insert into transacciones(codigo, numero_cuenta, monto, tipo, fecha, hora)
-values(107, '12312', 200, 'C', '21/05/2025', '13:25')
+values(107, '12312', 200, 'C', '21/05/2025', '09:00')
 
 insert into transacciones(codigo, numero_cuenta, monto, tipo, fecha, hora)
-values(108, '12313', 240, 'D', '22/05/2025', '15:03')
+values(108, '12313', 240, 'D', '22/05/2025', '09:00')
 
 insert into transacciones(codigo, numero_cuenta, monto, tipo, fecha, hora)
-values(109, '12314', 150, 'C', '22/05/2025', '18:00')
+values(109, '12314', 150, 'C', '22/05/2025', '09:00')
 
 --Consulta
 select * from transacciones
