@@ -89,3 +89,14 @@ values(9, 2, '15/11/2025', 6);
 
 insert into ventas(id_venta, codigo_producto, fecha_venta, cantidad)
 values(10, 1, '15/11/2025', 9);
+
+--Consulta Tablas Relacionadas
+select p.nombre, p.stock, v.cantidad
+from productos p, ventas v
+where v.codigo_producto = p.codigo
+and (p.descripcion is null) or (p.nombre like '%m%');
+
+select p.nombre, p.stock
+from productos p, ventas v
+where v.codigo_producto = p.codigo
+and v.codigo_producto = 5

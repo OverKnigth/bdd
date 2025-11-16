@@ -73,3 +73,14 @@ values('1721870116', 'Francisco', 'Paez', 'paez@gmail.com', '12/07/1999', 5);
 
 insert into estudiantes(cedula, nombre, apellido, email, fecha_nacimiento, codigo_profesor)
 values('1721770017', 'Leo', 'Messi', 'messi@gmail.com', '12/12/2000', 5);
+
+--Consultas Tablas Relacionadas
+select p.codigo, e.nombre, e.apellido
+from estudiantes e, profesores p
+where e.codigo_profesor = p.codigo
+and e.apellido like '%n%'
+
+select e.cedula, e.nombre, e.apellido, e.fecha_nacimiento, e.codigo_profesor
+from estudiantes e, profesores p
+where e.codigo_profesor = p.codigo
+and p.nombre = 'Francisco';

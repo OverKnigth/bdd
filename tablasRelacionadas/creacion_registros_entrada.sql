@@ -74,3 +74,19 @@ values(108, '1721870014', '12/12/2023', '10:00', 2205);
 
 insert into registros_entrada(codigo_registro, cedula_empleado, fecha, hora, codigo_empleado)
 values(109, '1721870014', '21/12/2023', '13:30', 2205);
+
+--Consulta Tablas Relacionadas
+select r.cedula_empleado, r.fecha, e.nombre
+from empleado e, registros_entrada r
+where r.codigo_empleado = e.codigo_empleado
+and (
+(r.fecha between '01/08/2023' and '31/08/2023')
+or (r.cedula_empleado like '17%' and r.hora between '08:00' and '12:00')
+or (r.fecha between '06/10/2023' and '20/10/2023' and r.cedula_empleado like '08%' 
+and r.hora between '09:00' and '13:00')
+);
+
+select r.codigo_empleado, r.cedula_empleado, e.nombre
+from empleado e, registros_entrada r
+where r.codigo_empleado = e.codigo_empleado
+and r.codigo_empleado = 2201;

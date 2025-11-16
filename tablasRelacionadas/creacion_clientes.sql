@@ -12,6 +12,7 @@ drop table clientes
 --Consulta 
 select * from clientes;
 select * from compras;
+select * from clientes, compras;
 
 --Tabla Compras
 create table compras(
@@ -29,13 +30,13 @@ references clientes(cedula)
 
 --Inserciones
 insert into clientes(cedula, nombre, apellido)
-values('1734567890', 'Juan', 'Perez')
+values('1234568900', 'Juan', 'Perez');
 
 insert into compras(id_compra, cedula, fecha_compra, monto)
-values(1, '1734567890', '12/12/2024', 12.50);
+values(1, '1234568900', '12/12/2024', 12.50);
 
 insert into compras(id_compra, cedula, fecha_compra, monto)
-values(2, '1734567890', '25/12/2024', 100);
+values(2, '1234568900', '25/12/2024', 100);
 
 insert into clientes(cedula, nombre, apellido)
 values('1734567891', 'Pablo', 'Perez');
@@ -65,10 +66,19 @@ insert into compras(id_compra, cedula, fecha_compra, monto)
 values(8, '1734567321', '20/07/2025', 31.18);
 
 insert into clientes(cedula, nombre, apellido)
-values('1734564321', 'Leo', 'Messi');
+values('1834564321', 'Leo', 'Messi');
 
 insert into compras(id_compra, cedula, fecha_compra, monto)
-values(9, '1734564321', '12/08/2025', 8.32);
+values(9, '1834564321', '12/08/2025', 8.32);
 
 insert into compras(id_compra, cedula, fecha_compra, monto)
-values(10, '1734564321', '24/09/2025', 59);
+values(10, '1834564321', '24/09/2025', 59);
+
+--Consultas Tablas Relacionadas
+select cli.nombre, cli.apellido
+from clientes cli
+where cli.cedula like '%7%';
+
+select cli.cedula, cli.nombre, cli.apellido
+from clientes cli
+where cli.nombre = 'Monica';

@@ -88,3 +88,16 @@ values(9, 'Xbox', 2);
 
 insert into plataformas(id_plataforma, nombre_plataforma, codigo_videojuego)
 values(10, 'Xbox', 1);
+
+--Consultas Tablas Relacionadas
+select v.*, p.*
+from videojuegos v, plataformas p
+where p.codigo_videojuego = v.codigo
+and ((v.descripcion like '%Guerra%') and (v.valoracion > 7))
+or ((v.nombre like 'C%') and (v.valoracion > 8))
+or (v.nombre like 'D%');
+
+select p.*
+from videojuegos v, plataformas p
+where p.codigo_videojuego = v.codigo
+and v.nombre = 'God Of War'
