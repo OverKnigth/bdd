@@ -84,3 +84,13 @@ select e.cedula, e.nombre, e.apellido, e.fecha_nacimiento, e.codigo_profesor
 from estudiantes e, profesores p
 where e.codigo_profesor = p.codigo
 and p.nombre = 'Francisco';
+
+--Consultas con Funciones de Agregacion
+select e.codigo_profesor, COUNT(*) as total_estudiantes
+from estudiantes e, profesores p
+where e.codigo_profesor = p.codigo
+group by e.codigo_profesor
+
+select ROUND(AVG(extract(year from current_date) - extract(year from e.fecha_nacimiento))) as edad_promedio
+from estudiantes e, profesores p
+where e.codigo_profesor = p.codigo

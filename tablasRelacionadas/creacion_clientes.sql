@@ -82,3 +82,15 @@ where cli.cedula like '%7%';
 select cli.cedula, cli.nombre, cli.apellido
 from clientes cli
 where cli.nombre = 'Monica';
+
+--Consultas con Funciones de Agregacion
+select cli.cedula, SUM(c.monto) as monto_total_compras
+from clientes cli, compras c
+where c.cedula = cli.cedula
+group by cli.cedula
+
+select c.cedula, COUNT(c.id_compra) as total_compras
+from clientes cli, compras c
+where c.cedula = cli.cedula
+and c.cedula = '1834564321'
+group by c.cedula;

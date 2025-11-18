@@ -100,3 +100,11 @@ select p.nombre, p.stock
 from productos p, ventas v
 where v.codigo_producto = p.codigo
 and v.codigo_producto = 5
+
+--Consultas con Funciones de Agregacion
+select Max(p.precio) as precio_maximo
+from productos p
+
+select Sum(v.cantidad) as cantidad_total_vendida
+from productos p, ventas v
+where v.codigo_producto = p.codigo

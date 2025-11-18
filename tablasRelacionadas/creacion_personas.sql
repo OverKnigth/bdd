@@ -76,6 +76,21 @@ values('1721548792', 500, '21/09/2023', '13:00', 'Santiago');
 insert into prestamo(cedula, monto, fecha_prestamo, hora_prestamo, garante)
 values('1721548792', 290, '01/10/2023', '14:30', 'Marco');
 
+insert into personas(cedula, nombre, apellido, fecha_nacimiento, cantidad_ahorrada, numero_hijos)
+values('1721548801', 'Mario', 'Lozano', '15/03/1990', 850, 2);
+
+insert into personas(cedula, nombre, apellido, fecha_nacimiento, cantidad_ahorrada, numero_hijos)
+values('1721548802', 'Carmen', 'Sanchez', '22/11/1988', 1200, 1);
+
+insert into personas(cedula, nombre, apellido, fecha_nacimiento, cantidad_ahorrada, numero_hijos)
+values('1721548803', 'Fernando', 'Molina', '05/09/1997', 300, 1);
+
+insert into personas(cedula, nombre, apellido, fecha_nacimiento, cantidad_ahorrada, numero_hijos)
+values('1721548804', 'Patricia', 'Vera', '19/01/1993', 670, 3);
+
+insert into personas(cedula, nombre, apellido, fecha_nacimiento, cantidad_ahorrada, numero_hijos)
+values('1721548805', 'Ricardo', 'Guerrero', '30/06/1982', 1950, 4);
+
 --Consultas Tablas Relacionadas
 select p.cantidad_ahorrada, pres.monto, pres.garante
 from personas p, prestamo pres
@@ -85,3 +100,13 @@ and pres.monto between money(100) and money(1000);
 select p.*
 from personas p
 where p.nombre = 'Sean';
+
+--Consultas con Funciones de Agregacion
+select pre.cedula, Sum(cast(pre.monto as numeric)) as monto_total_prestamos
+from personas p, prestamo pre
+where pre.cedula = p.cedula
+group by pre.cedula
+
+select Count(*) as total_personas
+from personas p
+where p.numero_hijos > 1;

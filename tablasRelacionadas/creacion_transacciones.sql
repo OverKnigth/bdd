@@ -101,3 +101,12 @@ select b.codigo_banco, t.*
 from transacciones t, banco b 
 where b.codigo_transaccion = t.codigo 
 and b.codigo_banco = 1;
+
+--Consultas con Funciones de Agregacion
+select Count(t.tipo) as total_transacciones_credito
+from transacciones t 
+where t.tipo = 'C'
+
+select t.numero_cuenta, Round(AVG(cast(t.monto as decimal)),2) as monto_promedio
+from transacciones t 
+group by t.numero_cuenta 

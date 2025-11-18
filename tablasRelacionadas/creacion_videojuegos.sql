@@ -101,3 +101,11 @@ select p.*
 from videojuegos v, plataformas p
 where p.codigo_videojuego = v.codigo
 and v.nombre = 'God Of War'
+
+--Consultas con Funciones de Agregacion
+select p.codigo_videojuego, count(p.id_plataforma) as total_plataformas
+from plataformas p
+group by p.codigo_videojuego
+
+select Round(AVG(cast(v.valoracion as decimal)),2) as promedio_valoracion
+from videojuegos v

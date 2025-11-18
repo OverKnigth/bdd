@@ -90,3 +90,11 @@ select r.codigo_empleado, r.cedula_empleado, e.nombre
 from empleado e, registros_entrada r
 where r.codigo_empleado = e.codigo_empleado
 and r.codigo_empleado = 2201;
+
+--Consultas con Funciones de Agregacion
+select r.cedula_empleado, count(*) as total_registros_entrada
+from registros_entrada r
+group by r.cedula_empleado
+
+select min(r.fecha) as fecha_minima, max(r.fecha) as fecha_maxima
+from registros_entrada r
